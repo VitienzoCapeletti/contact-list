@@ -1,7 +1,6 @@
 package com.contactlist.dto;
 
 import com.contactlist.entity.ContactList;
-import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
