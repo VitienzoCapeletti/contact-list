@@ -1,11 +1,13 @@
 package com.contactlist.entity;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.With;
+import org.hibernate.validator.constraints.br.CPF;
+
+import java.time.LocalDate;
 
 @With
 @Data
@@ -19,11 +21,15 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull
+    @Column(nullable = false)
     private String name;
-    @NotNull
+    @Column(nullable = false)
+    private LocalDate birthday;
+    @CPF
+    @Column(nullable = false)
     private String cpf;
-    @NotNull
+    @OneToMany
+    @Column(nullable = false)
     private ContactList contactList;
 
 }
